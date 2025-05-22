@@ -9,6 +9,7 @@ enum class TokenType : uint8_t
 {
     _EOF = 0,
     ID,
+    NUMBER,
     SEMI,
     COMMA,
     LPAREN,

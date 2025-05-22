@@ -14,6 +14,7 @@ private:
     void advance();
     void add_token(TokenType type, std::string value);
     void collect_id();
+    void collect_number();
 
 public:
     std::vector<Token> token_list;

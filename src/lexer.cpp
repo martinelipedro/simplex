@@ -31,6 +31,29 @@ void Lexer::collect_id()
     this->add_token(TokenType::ID, buffer);
 }
 
+void Lexer::collect_number()
+{
+    std::string buffer{};
+    unsigned int dot_count;
+
+    while (isdigit(this->current_char) || this->current_char == '.')
+    {
+        if (dot_count > 2)
+        {
+            printf("Two dots in a single number! Exiting");
+            exit(1);
+        }
+
+        if (this->current_char == '.')
+            dot_count++;
+
+        buffer += this->current_char;
+        this->advance();
+    }
+
+    this->add_token(TokenType::NUMBER, buffer);
+}
+
 void Lexer::collect()
 {
     while (this->current_char)
@@ -38,6 +61,10 @@ void Lexer::collect()
         if (isalpha(this->current_char))
         {
             this->collect_id();
+        }
+        else if (isdigit(this->current_char))
+        {
+            this->collect_number();
         }
 
         switch (this->current_char)
