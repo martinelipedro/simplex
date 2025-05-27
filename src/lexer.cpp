@@ -90,6 +90,22 @@ void Lexer::collect()
             this->add_token(TokenType::EQUALS, "=");
             this->advance();
             break;
+        case '+':
+            this->add_token(TokenType::PLUS, "+");
+            this->advance();
+            break;
+        case '-':
+            this->add_token(TokenType::MINUS, "-");
+            this->advance();
+            break;
+        case '*':
+            this->add_token(TokenType::STAR, "*");
+            this->advance();
+            break;
+        case '/':
+            this->add_token(TokenType::SLASH, "/");
+            this->advance();
+            break;
         }
     }
 }
