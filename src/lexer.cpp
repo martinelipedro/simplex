@@ -34,7 +34,7 @@ void Lexer::collect_id()
 void Lexer::collect_number()
 {
     std::string buffer{};
-    unsigned int dot_count;
+    unsigned int dot_count = 0;
 
     while (isdigit(this->current_char) || this->current_char == '.')
     {

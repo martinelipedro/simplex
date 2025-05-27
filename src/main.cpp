@@ -4,7 +4,7 @@
 
 int main()
 {
-    std::string source = "print(variable);";
+    std::string source = "print(4568);";
 
     Lexer lexer = Lexer(source);
     lexer.collect();
