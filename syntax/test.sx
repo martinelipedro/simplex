@@ -1,0 +1,10 @@
+function start() 
+    stack number[4]{4};
+
+    number[0:3] := 485595;
+    4(number) := 53;
+
+
+
+    heap number2[64]{8};
+end
